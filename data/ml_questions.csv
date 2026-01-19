@@ -1,0 +1,38 @@
+subject,topic,difficulty,question,option_a,option_b,option_c,option_d,correct_option
+ML,Basics,easy,What is machine learning?,Programming language,Subset of AI,Database system,Operating system,b
+ML,Basics,easy,Which type of learning uses labeled data?,Unsupervised,Reinforcement,Supervised,Semi-supervised,c
+ML,Basics,easy,Which task predicts continuous values?,Classification,Clustering,Regression,Association,c
+ML,Basics,easy,Which task groups similar data points?,Regression,Classification,Clustering,Forecasting,c
+ML,Basics,easy,Which library is commonly used for ML in Python?,NumPy,TensorFlow,Flask,BeautifulSoup,b
+ML,DataTypes,easy,Which is a numerical feature?,Age,Color,City,Gender,a
+ML,DataTypes,easy,Which is a categorical feature?,Height,Weight,Temperature,Gender,d
+ML,DataTypes,medium,Which encoding converts categories into binary columns?,Label encoding,One-hot encoding,Scaling,Normalization,b
+ML,Preprocessing,easy,Why is data preprocessing required?,To reduce data size,To clean and prepare data,To train faster CPU,To deploy model,b
+ML,Preprocessing,medium,Which technique handles missing numerical values?,One-hot encoding,Mean imputation,Scaling,Normalization,b
+ML,Preprocessing,medium,Which technique scales features between 0 and 1?,Standardization,Normalization,Encoding,Imputation,b
+ML,Preprocessing,medium,Which preprocessing step converts text labels to numbers?,Scaling,Normalization,Label encoding,Imputation,c
+ML,Supervised,easy,Which algorithm is used for regression?,Linear Regression,Logistic Regression,KMeans,Apriori,a
+ML,Supervised,medium,Which algorithm is used for binary classification?,Linear Regression,Logistic Regression,KMeans,PCA,b
+ML,Supervised,medium,Which algorithm uses distance to classify points?,Decision Tree,Naive Bayes,KNN,Linear Regression,c
+ML,Supervised,medium,Which model is prone to overfitting?,Simple model,Linear model,Complex model,Underfit model,c
+ML,Supervised,hard,Which algorithm assumes feature independence?,KNN,Decision Tree,Naive Bayes,Linear Regression,c
+ML,Unsupervised,easy,Which algorithm is used for clustering?,Linear Regression,Logistic Regression,KMeans,Naive Bayes,c
+ML,Unsupervised,medium,What does K in KMeans represent?,Clusters count,Iterations count,Features count,Distance metric,a
+ML,Unsupervised,hard,Which method helps choose optimal K?,Accuracy score,Confusion matrix,Elbow method,ROC curve,c
+ML,Evaluation,easy,What does accuracy measure?,Correct predictions ratio,Error rate,Loss value,Training speed,a
+ML,Evaluation,medium,Which metric is better for imbalanced data?,Accuracy,Precision,Recall,MSE,c
+ML,Evaluation,medium,Which matrix shows TP FP FN TN?,Accuracy matrix,Loss matrix,Confusion matrix,Correlation matrix,c
+ML,Evaluation,hard,Which metric balances precision and recall?,Accuracy,F1 score,MSE,RMSE,b
+ML,Overfitting,medium,What is overfitting?,Model generalizes well,Model memorizes training data,Model too simple,Low variance model,b
+ML,Overfitting,medium,What is underfitting?,High variance model,Model too complex,Model too simple,Perfect model,c
+ML,Overfitting,hard,Which technique reduces overfitting?,Increase features,Decrease data,Regularization,Remove validation,c
+ML,FeatureEngineering,medium,What is feature engineering?,Model evaluation,Feature creation and selection,Hyperparameter tuning,Data collection,b
+ML,FeatureEngineering,hard,Why is feature engineering important?,Improves model input quality,Reduces CPU usage,Removes labels,Stores data,a
+ML,TrainTest,easy,Why do we split data into train and test?,Increase accuracy,Reduce features,Check generalization,Remove noise,c
+ML,TrainTest,medium,What is a common train-test split ratio?,50-50,60-40,70-30,80-20,d
+ML,Validation,medium,What is cross-validation?,Multiple train-test splits,Single test run,Model deployment,Feature scaling,a
+ML,Validation,hard,Why is cross-validation used?,Reduce bias in evaluation,Increase data size,Speed up training,Remove noise,a
+ML,BiasVariance,medium,What causes high bias?,Complex model,Simple model,Large dataset,Noise,b
+ML,BiasVariance,hard,What causes high variance?,Simple model,Regularization,Complex model,Small features,c
+ML,AlgorithmIntuition,medium,Why does KNN perform poorly on large datasets?,Low accuracy,High memory usage,Needs feature scaling,Overfitting,b
+ML,AlgorithmIntuition,hard,Why do decision trees overfit?,Low bias,High variance,Small depth,Few splits,b

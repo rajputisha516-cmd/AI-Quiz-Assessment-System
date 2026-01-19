@@ -1,0 +1,71 @@
+subject,topic,difficulty,question,option_a,option_b,option_c,option_d,correct_option
+Python,Advanced,medium,What is the primary purpose of decorators?,Modify function behavior,Improve speed,Handle errors,Create classes,a
+Python,Advanced,hard,Which keyword is used to build generators?,yield,return,iter,gen,a
+Python,Advanced,medium,What problem do context managers solve?,Speed,Resource management,Debugging,Inheritance,b
+Python,Advanced,hard,Which methods define a context manager?,__iter__ and __next__,__enter__ and __exit__,__init__ and __call__,__str__ and __repr__,b
+Python,Advanced,medium,Why is __slots__ used in classes?,Encapsulation,Reduce memory usage,Inheritance,Abstraction,b
+Python,Advanced,hard,Which situation can cause memory leaks in Python?,Garbage collection,Circular references,Unused imports,Low CPU,b
+Python,Advanced,medium,What does isinstance() check?,Value equality,Object type,Scope,Memory,b
+Python,Advanced,hard,What does Python GIL mainly affect?,I/O tasks,CPU-bound threads,Multiprocessing,Memory,b
+Python,Advanced,hard,Which approach is best for CPU-heavy parallelism?,Threading,Asyncio,Multiprocessing,Generators,c
+Python,Advanced,medium,What is lazy evaluation?,Immediate execution,Execution on demand,Parallel execution,Recursive execution,b
+Python,Advanced,hard,What is monkey patching?,Runtime code modification,Testing technique,Memory optimization,OOP concept,a
+Python,Advanced,medium,What does map() return in Python 3?,List,Tuple,Iterator,Set,c
+Python,Advanced,hard,Which data structure is best for FIFO queue?,List,Tuple,Deque,Set,c
+Python,Advanced,hard,Why are virtual environments important?,Version control,Dependency isolation,Speed,Memory,b
+Python,Advanced,medium,What happens if __eq__ is overridden?,Hash removed,Object comparison changes,Class breaks,Nothing,b
+Python,Advanced,medium,What is the primary purpose of decorators?,Modify function behavior,Improve speed,Handle errors,Create classes,a
+Python,Advanced,hard,Which keyword is used to build generators?,yield,return,iter,gen,a
+Python,Advanced,medium,What problem do context managers solve?,Speed,Resource management,Debugging,Inheritance,b
+Python,Advanced,hard,Which methods define a context manager?,__iter__ and __next__,__enter__ and __exit__,__init__ and __call__,__str__ and __repr__,b
+Python,Advanced,medium,Why is __slots__ used in classes?,Encapsulation,Reduce memory usage,Inheritance,Abstraction,b
+Python,Advanced,hard,Which situation can cause memory leaks in Python?,Garbage collection,Circular references,Unused imports,Low CPU,b
+Python,Advanced,medium,What does isinstance() check?,Value equality,Object type,Scope,Memory,b
+Python,Advanced,hard,What does Python GIL mainly affect?,I/O tasks,CPU-bound threads,Multiprocessing,Memory,b
+ML,Advanced,medium,What does bias–variance tradeoff explain?,Accuracy vs loss,Underfitting vs overfitting,Training vs testing,Speed vs memory,b
+ML,Advanced,hard,Which technique reduces model variance?,Increase depth,Regularization,Reduce data,Remove features,b
+ML,Advanced,medium,Why is cross-validation preferred?,Increase data size,Stable evaluation,Speed up training,Feature scaling,b
+ML,Advanced,hard,Which method tunes hyperparameters?,Grid Search,Encoding,Normalization,Imputation,a
+ML,Advanced,medium,What is data leakage?,Test data used in training,Missing values,Class imbalance,Noise,a
+ML,Advanced,hard,Which metric matters when false negatives are costly?,Accuracy,Precision,Recall,F1,c
+ML,Advanced,medium,What does PCA primarily do?,Feature selection,Dimensionality reduction,Classification,Clustering,b
+ML,Advanced,hard,Why is scaling required for KNN?,Distance-based algorithm,Noise removal,Bias reduction,Speed,a
+ML,Advanced,medium,What is ensemble learning?,Single model training,Combining multiple models,Feature extraction,Sampling,b
+ML,Advanced,hard,Which ensemble method reduces overfitting?,Boosting,Bagging,Stacking,Scaling,b
+ML,Advanced,medium,What is concept drift?,Change in data distribution,Overfitting,Noise,Feature scaling,a
+ML,Advanced,hard,Which validation suits time-series data?,KFold,Stratified,Random split,Time-based split,d
+ML,Advanced,medium,What does regularization penalize?,Bias,Variance,Large coefficients,Small dataset,c
+ML,Advanced,hard,Which algorithm is most sensitive to feature scaling?,Decision Tree,Naive Bayes,KNN,Random Forest,c
+ML,Advanced,medium,What is stacking?,Parallel training,Sequential learning,Meta-model ensemble,Bootstrapping,c
+ML,Advanced,hard,Which metric is non-differentiable?,MSE,LogLoss,Accuracy,RMSE,c
+ML,Advanced,medium,What is model calibration?,Feature scaling,Probability reliability,Encoding,Sampling,b
+ML,Advanced,hard,Which issue arises with high dimensions?,Bias,Curse of dimensionality,Underfitting,Noise,b
+ML,Advanced,hard,What causes exploding gradients?,Small learning rate,Large gradients,Regularization,Normalization,b
+ML,Advanced,medium,Why use pipelines?,Speed,Prevent data leakage,Reduce memory,Improve UI,b
+ML,Advanced,hard,Which technique handles imbalanced data?,PCA,SMOTE,Normalization,Imputation,b
+SQL,Advanced,medium,What is a view in SQL?,Temporary table,Virtual table,Index,Stored procedure,b
+SQL,Advanced,hard,Which command creates a view?,CREATE TABLE,CREATE VIEW,CREATE INDEX,CREATE PROCEDURE,b    
+SQL,Advanced,medium,Why are indexes used?,Integrity,Speed up queries,Reduce storage,Normalization,b
+SQL,Advanced,hard,Which index type is best for range queries?,Hash,B-Tree,Bitmap,Heap,b
+SQL,Advanced,medium,What is a correlated subquery?,Independent query,Depends on outer query,Join query,Union query,b
+SQL,Advanced,hard,Which SQL feature supports analytics without grouping?,JOIN,Window functions,Indexes,Views,b
+SQL,Advanced,medium,Which function gives row numbers?,RANK(),DENSE_RANK(),ROW_NUMBER(),COUNT(),c
+SQL,Advanced,hard,Difference between RANK and DENSE_RANK?,Sorting,Gaps in ranking,Speed,NULL handling,b
+SQL,Advanced,medium,What does EXISTS return?,Table,Boolean,Result set,Index,b
+SQL,Advanced,hard,Which join returns NULLs from both tables?,INNER,LEFT,RIGHT,FULL,d
+SQL,Advanced,medium,Why HAVING is used instead of WHERE?,Filter rows,Filter groups,Improve speed,Sort data,b
+SQL,Advanced,hard,Which query operation is most expensive?,SELECT,JOIN,INDEX,ORDER BY,b
+SQL,Advanced,medium,What is a composite key?,Multiple columns key,Multiple tables,Multiple indexes,Multiple constraints,a
+SQL,Advanced,hard,What happens without indexes on large tables?,Fast queries,Full table scan,Error,Deadlock,b
+SQL,Advanced,medium,What does PARTITION BY do?,Split tables,Window grouping,Filter rows,Sort data,b
+SQL,Advanced,hard,Which isolation level avoids phantom reads?,Read committed,Repeatable read,Serializable,Read uncommitted,c
+SQL,Advanced,medium,Why normalization is used?,Reduce redundancy,Increase speed,Add constraints,Improve joins,a
+SQL,Advanced,hard,What is denormalization?,Add redundancy,Remove indexes,Split tables,Add constraints,a
+SQL,Advanced,medium,What is ACID in databases?,Set of properties,Normalization technique,Indexing method,Query type,a
+SQL,Advanced,hard,Which property ensures transactions are permanent?,Atomicity,Consistency,Isolation,Durability,d
+SQL,Advanced,medium,What is a stored procedure?,Precompiled query,Temporary table,Index,View,a
+SQL,Advanced,hard,Which SQL command removes a stored procedure?,DROP PROCEDURE,DELETE PROCEDURE,REMOVE PROCEDURE,ERASE PROCEDURE,a
+SQL,Advanced,medium,What is a transaction?,Single query,Sequence of operations,Temporary table,Index,b
+SQL,Advanced,hard,Which command starts a transaction?,BEGIN,START,INITIATE,OPEN,a
+SQL,Advanced,medium,What does COMMIT do?,Save changes,Undo changes,Start transaction,End transaction,a
+

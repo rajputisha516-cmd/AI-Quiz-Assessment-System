@@ -1,0 +1,37 @@
+subject,topic,difficulty,question,option_a,option_b,option_c,option_d,correct_option
+SQL,Basics,easy,Which SQL command retrieves data from a table?,INSERT,UPDATE,SELECT,DELETE,c
+SQL,Basics,easy,Which statement removes all rows from a table but keeps structure?,DELETE,DROP,TRUNCATE,REMOVE,c
+SQL,Basics,easy,Which keyword sorts query results?,GROUP BY,ORDER BY,WHERE,HAVING,b
+SQL,Basics,easy,Which wildcard matches multiple characters in LIKE?,%,_,*,?,a
+SQL,Basics,easy,Which SQL statement adds new data?,INSERT,UPDATE,SELECT,ALTER,a
+SQL,Filtering,easy,Which clause filters rows in SQL?,WHERE,ORDER BY,GROUP BY,HAVING,a
+SQL,Filtering,medium,Which operator selects values from a list?,ANY,IN,BETWEEN,ALL,b
+SQL,Filtering,medium,Which operator selects values in a range?,IN,BETWEEN,LIKE,EXISTS,b
+SQL,Filtering,medium,Which operator is used for pattern matching?,IN,BETWEEN,LIKE,EXISTS,c
+SQL,Filtering,hard,Which operator checks existence of rows?,IN,ANY,EXISTS,ALL,c
+SQL,Sorting,medium,Which clause limits the number of rows returned?,WHERE,ORDER BY,LIMIT,GROUP BY,c
+SQL,Sorting,medium,Which clause defines ascending or descending order?,WHERE,ORDER BY,GROUP BY,HAVING,b
+SQL,Aggregation,medium,Which function returns number of rows?,SUM,COUNT,AVG,MAX,b
+SQL,Aggregation,medium,Which function returns average value?,AVG,MEAN,SUM,COUNT,a
+SQL,Aggregation,medium,Which function returns highest value?,MAX,TOP,COUNT,UPPER,a
+SQL,Aggregation,hard,Which function ignores NULL values?,SUM,COUNT,AVG,All of these,d
+SQL,GroupBy,medium,Which clause groups rows with same values?,WHERE,GROUP BY,ORDER BY,HAVING,b
+SQL,GroupBy,hard,Which clause is mandatory with aggregate functions?,ORDER BY,WHERE,GROUP BY,HAVING,c
+SQL,Having,medium,Which clause filters grouped data?,WHERE,HAVING,GROUP BY,ORDER BY,b
+SQL,Having,hard,WHERE cannot be used with which function?,Aggregate,Scalar,Text,Date,a
+SQL,Joins,medium,Which join returns matching rows from both tables?,LEFT JOIN,RIGHT JOIN,INNER JOIN,FULL JOIN,c
+SQL,Joins,medium,Which join returns all rows from left table?,INNER JOIN,LEFT JOIN,RIGHT JOIN,FULL JOIN,b
+SQL,Joins,medium,Which join returns all rows from right table?,INNER JOIN,LEFT JOIN,RIGHT JOIN,FULL JOIN,c
+SQL,Joins,hard,Which join returns all rows from both tables?,INNER JOIN,LEFT JOIN,RIGHT JOIN,FULL JOIN,d
+SQL,Joins,hard,Which join is used when no matching condition exists?,CROSS JOIN,INNER JOIN,LEFT JOIN,RIGHT JOIN,a
+SQL,Subqueries,medium,What is a subquery?,Main query,Query inside another query,Join query,Union query,b
+SQL,Subqueries,medium,Which keyword compares a value to subquery result?,IN,BETWEEN,LIKE,ORDER,a
+SQL,Subqueries,hard,Which subquery returns a single value?,Scalar,Correlated,Nested,Inline,a
+SQL,Subqueries,hard,Which subquery depends on outer query?,Scalar,Simple,Correlated,Inline,c
+SQL,NullHandling,medium,Which operator checks NULL values?,= NULL,IS NULL,NULL =,LIKE,b
+SQL,NullHandling,medium,Which operator checks non-NULL values?,NOT NULL,IS NOT NULL,!= NULL,HAVING,b
+SQL,Constraints,medium,Which constraint uniquely identifies a row?,UNIQUE,PRIMARY KEY,FOREIGN KEY,NOT NULL,b
+SQL,Constraints,medium,Which constraint prevents NULL values?,UNIQUE,NOT NULL,PRIMARY KEY,CHECK,b
+SQL,Constraints,hard,Which constraint enforces referential integrity?,UNIQUE,PRIMARY KEY,FOREIGN KEY,CHECK,c
+SQL,ExecutionOrder,hard,Which clause executes first in SQL?,SELECT,WHERE,GROUP BY,FROM,d
+SQL,ExecutionOrder,hard,Which clause executes after GROUP BY?,WHERE,HAVING,SELECT,FROM,b
