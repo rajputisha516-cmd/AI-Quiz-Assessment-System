@@ -1,108 +1,151 @@
 import streamlit as st
 import time
+
 from core.quiz_engine import QuizEngine
 from utils.helpers import log_attempt
 from utils.difficulty_logic import get_next_difficulty
 from ml.skill_prediction import predict_skill_level
 
-# ---------------- PAGE SETUP ----------------
-st.set_page_config(page_title="AI Quiz Assessment System", layout="centered")
-st.title("🧠 AI Quiz Assessment System")
+from ui.styles import load_styles
+from ui.components import render_title, render_question, render_result
 
+
+# ================= PAGE SETUP =================
+st.set_page_config(
+    page_title="AI Quiz Assessment System",
+    layout="wide"
+)
+
+load_styles()
 engine = QuizEngine()
 
-# ---------------- SESSION STATE INIT ----------------
+
+# ================= CONSTANTS =================
+SINGLE_QUIZ_QUESTIONS = 30
+COMBINED_QUIZ_QUESTIONS = 50
+
+
+# ================= SESSION STATE =================
 defaults = {
     "quiz_started": False,
+    "quiz_completed": False,
     "current_question": None,
     "start_time": None,
     "difficulty": "easy",
     "quiz_type": None,
+    "required_questions": 0,
     "asked_questions": set(),
     "show_result": False,
-    "last_result": None
+    "last_result": None,
+    "correct_count": 0
 }
 
 for k, v in defaults.items():
     if k not in st.session_state:
         st.session_state[k] = v
 
-# ---------------- QUIZ TYPE ----------------
-quiz_type = st.selectbox(
-    "Select Quiz Type",
-    ["Single Skill", "Combined (Interview Mode)"]
-)
 
-if quiz_type == "Single Skill":
-    subject = st.selectbox("Select Skill", ["Python", "ML", "SQL"])
-else:
-    subject = "Combined"
+# ================= LAYOUT =================
+left, center, right = st.columns([1, 3, 1])
 
-# ---------------- RESET BUTTON ----------------
-if st.button("🔄 Reset Quiz"):
-    for k, v in defaults.items():
-        st.session_state[k] = v
-    st.rerun()
 
-# ---------------- START QUIZ ----------------
-if not st.session_state.quiz_started:
-    if st.button("▶️ Start Quiz"):
-        st.session_state.quiz_started = True
-        st.session_state.quiz_type = quiz_type
-        st.session_state.difficulty = "easy"
-        st.session_state.asked_questions = set()
-        st.session_state.show_result = False
-        st.session_state.last_result = None
+# ================= LEFT PANEL =================
+with left:
+    st.markdown("<div class='left-panel'>", unsafe_allow_html=True)
 
-        questions = engine.get_questions(
-            subject=subject,
-            difficulty=st.session_state.difficulty,
-            asked_questions=st.session_state.asked_questions,
-            n=1
-        )
+    st.markdown("### ⚙️ Quiz Settings")
 
-        if not questions:
-            st.error("No questions available.")
-            st.stop()
-
-        st.session_state.current_question = questions[0]
-        st.session_state.start_time = time.time()
-        st.rerun()
-
-# ---------------- SHOW QUESTION ----------------
-if st.session_state.quiz_started and st.session_state.current_question:
-
-    q = st.session_state.current_question
-
-    st.markdown(f"### ❓ {q['question']}")
-
-    options = [
-        q["option_a"],
-        q["option_b"],
-        q["option_c"],
-        q["option_d"]
-    ]
-    options = [o for o in options if isinstance(o, str) and o.strip()]
-
-    selected_option = st.radio(
-        "Choose one:",
-        options,
-        index=None,
-        key="option_radio"
+    quiz_type = st.radio(
+        "Quiz Mode",
+        ["Single Skill", "Combined (Interview Mode)"]
     )
 
-    # ---------------- SUBMIT ANSWER ----------------
-    if not st.session_state.show_result:
-        if st.button("✅ Submit Answer"):
-            if selected_option is None:
-                st.warning("⚠️ Please select an option.")
+    if quiz_type == "Single Skill":
+        subject = st.selectbox("Subject", ["Python", "ML", "SQL"])
+        required_questions = SINGLE_QUIZ_QUESTIONS
+    else:
+        subject = "Combined"
+        required_questions = COMBINED_QUIZ_QUESTIONS
+
+    if st.button("🔄 Reset Quiz"):
+        for k, v in defaults.items():
+            st.session_state[k] = v
+        st.rerun()
+
+    st.markdown("</div>", unsafe_allow_html=True)
+
+
+# ================= CENTER PANEL =================
+with center:
+    st.markdown("<div class='center-panel'>", unsafe_allow_html=True)
+
+    render_title()
+
+    # ---------- START QUIZ ----------
+    if not st.session_state.quiz_started and not st.session_state.quiz_completed:
+        if st.button("▶️ Start Quiz"):
+            st.session_state.quiz_started = True
+            st.session_state.quiz_type = quiz_type
+            st.session_state.required_questions = required_questions
+            st.session_state.difficulty = "easy"
+            st.session_state.asked_questions = set()
+            st.session_state.correct_count = 0
+
+            qs = engine.get_questions(
+                subject=subject,
+                difficulty=st.session_state.difficulty,
+                asked_questions=st.session_state.asked_questions,
+                n=1
+            )
+
+            if not qs:
+                st.error("No questions available.")
                 st.stop()
 
-            end_time = time.time()
-            time_taken = round(end_time - st.session_state.start_time, 2)
+            st.session_state.current_question = qs[0]
+            st.session_state.start_time = time.time()
+            st.rerun()
 
+    # ---------- QUESTION FLOW ----------
+    if st.session_state.quiz_started and st.session_state.current_question:
+        q = st.session_state.current_question
+
+        render_question(q["question"])
+
+        options = [
+            q["option_a"],
+            q["option_b"],
+            q["option_c"],
+            q["option_d"]
+        ]
+        options = [o for o in options if isinstance(o, str) and o.strip()]
+
+        selected = st.radio(
+            "Choose an answer:",
+            options,
+            index=None
+        )
+
+        col_submit, col_next = st.columns(2)
+
+        with col_submit:
+            submit = st.button("✅ Submit Answer")
+
+        with col_next:
+            next_btn = st.button("➡️ Next Question")
+
+        # ---------- SUBMIT ----------
+        if submit and not st.session_state.show_result:
+            if selected is None:
+                st.warning("Please select an option.")
+                st.stop()
+
+            time_taken = round(time.time() - st.session_state.start_time, 2)
             correct_answer = q[f"option_{q['correct_option']}"]
-            correct = selected_option == correct_answer
+            correct = selected == correct_answer
+
+            if correct:
+                st.session_state.correct_count += 1
 
             st.session_state.last_result = {
                 "correct": correct,
@@ -130,47 +173,83 @@ if st.session_state.quiz_started and st.session_state.current_question:
             st.session_state.show_result = True
             st.rerun()
 
-    # ---------------- SHOW RESULT ----------------
-    else:
-        result = st.session_state.last_result
+        # ---------- RESULT ----------
+        if st.session_state.show_result:
+            r = st.session_state.last_result
+            render_result(
+                r["correct"],
+                r["correct_answer"],
+                r["time_taken"]
+            )
 
-        if result["correct"]:
-            st.success("🎉 Correct Answer!")
-        else:
-            st.error(f"❌ Wrong Answer | Correct: {result['correct_answer']}")
+        # ---------- NEXT ----------
+        if next_btn and st.session_state.show_result:
 
-        st.write(f"⏱️ Time taken: {result['time_taken']} seconds")
+            # 🔒 HARD STOP CONDITION
+            if len(st.session_state.asked_questions) >= st.session_state.required_questions:
+                st.session_state.quiz_completed = True
+                st.session_state.quiz_started = False
+                st.rerun()
 
-        if st.button("➡️ Next Question"):
-            questions = engine.get_questions(
+            qs = engine.get_questions(
                 subject=subject,
                 difficulty=st.session_state.difficulty,
                 asked_questions=st.session_state.asked_questions,
                 n=1
             )
 
-            # ---------- QUIZ COMPLETED ----------
-            if not questions:
-                st.success("🎉 Quiz Completed!")
-
-                result = predict_skill_level("data/user_attempts.csv")
-
-                if not result["show_level"]:
-                    st.info(result["message"])
-                else:
-                    st.markdown("## 🧠 Skill Assessment Result")
-                    st.success(f"Skill Level: **{result['level']}**")
-
-                    if "note" in result:
-                        st.caption(result["note"])
-
+            if not qs:
+                # fallback safety
+                st.session_state.quiz_completed = True
                 st.session_state.quiz_started = False
-                st.session_state.current_question = None
-                st.stop()
+                st.rerun()
 
-            # ---------- LOAD NEXT QUESTION ----------
-            st.session_state.current_question = questions[0]
+            st.session_state.current_question = qs[0]
             st.session_state.start_time = time.time()
             st.session_state.show_result = False
             st.session_state.last_result = None
             st.rerun()
+
+    # ---------- QUIZ COMPLETED ----------
+    if st.session_state.quiz_completed:
+        st.balloons()
+
+        st.markdown(
+            "<div style='color:#C4B5FD; font-weight:600;'>🎉 Quiz Completed</div>",
+            unsafe_allow_html=True
+        )
+
+        assessment = predict_skill_level("data/user_attempts.csv")
+
+        if assessment.get("show_level"):
+            st.markdown(
+                f"<div style='color:#DDD6FE;'>Skill Level: <b>{assessment['level']}</b></div>",
+                unsafe_allow_html=True
+            )
+        else:
+            st.info(assessment["message"])
+
+    st.markdown("</div>", unsafe_allow_html=True)
+
+
+# ================= RIGHT PANEL =================
+with right:
+    st.markdown("<div class='right-panel'>", unsafe_allow_html=True)
+
+    st.markdown("### 📊 Progress")
+
+    st.write("Attempted:", len(st.session_state.asked_questions))
+    st.write("Correct:", st.session_state.correct_count)
+    st.write("Total:", st.session_state.required_questions)
+
+    if len(st.session_state.asked_questions) > 0:
+        acc = (st.session_state.correct_count / len(st.session_state.asked_questions)) * 100
+        st.write(f"Accuracy: {acc:.1f}%")
+
+    if st.session_state.quiz_completed:
+        st.markdown(
+            "<div style='color:#C4B5FD; font-weight:600;'>✔ Session Summary Ready</div>",
+            unsafe_allow_html=True
+        )
+
+    st.markdown("</div>", unsafe_allow_html=True)
