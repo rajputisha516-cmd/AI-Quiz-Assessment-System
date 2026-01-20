@@ -2,7 +2,7 @@ subject,topic,difficulty,question,option_a,option_b,option_c,option_d,correct_op
 Python,Basics,easy,Which keyword is used to define a function?,func,def,function,define,b
 Python,Basics,easy,Which data type is immutable?,List,Dictionary,Tuple,Set,c
 Python,Basics,easy,Which operator is used for exponentiation?,^,**,%,//,b
-Python,Basics,easy,What is the output of len("Python")?,5,6,7,Error,b
+Python,Basics,easy,"What is the output of len(""Python"")?",5,6,7,Error,b
 Python,Basics,easy,Which loop is used when number of iterations is known?,while,do-while,for,repeat,c
 Python,Basics,easy,Which keyword is used to take input from user?,input(),scan(),read(),get(),a
 Python,Basics,easy,Which of these is a valid variable name?,2var,_var,var-2,@var,b
@@ -17,8 +17,23 @@ Python,Basics,easy,What is output of 10//3?,3.33,3,4,Error,b
 Python,Basics,easy,Which function gives ASCII value?,char(),ord(),ascii(),val(),b
 Python,Basics,easy,What does continue do?,Stops loop,Skips iteration,Ends program,Throws error,b
 Python,Basics,easy,Which keyword deletes a variable?,remove,delete,del,clear,c
-Python,Basics,easy,What is default return value of function?,0,None,False,Empty,b
+Python,Basics,easy,What is default return value of function?,0,,False,Empty,a
 Python,Basics,easy,Which symbol is used for comments?,//,/*,#,%,c
+Python,Basics,easy,Which built-in function returns type?,id(),type(),len(),dir(),b
+Python,Basics,easy,What does len() return?,Memory size,Number of elements,Index count,Bytes,b
+Python,Basics,easy,Which keyword exits a function?,stop,exit,return,break,c
+Python,Basics,easy,What is output of bool(0)?,True,False,,Error,b
+Python,Basics,easy,Which data type allows duplicate values?,Set,Tuple,List,Dictionary,c
+Python,Basics,easy,Which keyword is used to define constant?,const,final,static,,a
+Python,Basics,easy,Which function rounds a number?,round(),int(),ceil(),floor(),a
+Python,Basics,easy,Which operator performs floor division?,/,//,%,**,b
+Python,Basics,easy,Which function returns absolute value?,abs(),round(),pow(),sqrt(),a
+Python,Basics,easy,What is output of type([])?,list,tuple,set,dict,a
+Python,Basics,easy,Which keyword creates anonymous function?,lambda,func,def,anon,a
+Python,Basics,easy,Which statement skips remaining code in loop?,pass,continue,break,exit,b
+Python,Basics,easy,What does input() return?,int,float,str,bool,c
+Python,Basics,easy,Which operator checks membership?,in,has,contains,inside,a
+Python,Basics,easy,What is output of print(2**3)?,6,8,9,Error,b
 Python,OOP,medium,What is a class?,Blueprint,Object,Function,Module,a
 Python,OOP,medium,What is an object?,Instance of class,Blueprint,Variable,Method,a
 Python,OOP,medium,Which method initializes an object?,__start__,__init__,__main__,__create__,b
@@ -29,19 +44,58 @@ Python,OOP,medium,Which variable belongs to a class?,Instance variable,Local var
 Python,OOP,medium,What is method overriding?,Same method in child class,Same class methods,Overloading,Inheritance,a
 Python,OOP,medium,Which method is called when object is printed?,__print__,__show__,__str__,__repr__,c
 Python,OOP,medium,Which keyword refers to parent class?,this,base,super,parent,c
+Python,OOP,medium,What is constructor?,Initializes object,Deletes object,Prints object,Creates class,a
+Python,OOP,medium,What is method overloading?,Same name different args,Same class methods,Inheritance,Encapsulation,a
+Python,OOP,medium,Which attribute hides data?,public,private,protected,static,b
+Python,OOP,medium,Which keyword enforces inheritance?,inherit,extends,is-a,,a
+Python,OOP,medium,What is isinstance() used for?,Type check,Memory check,Value check,Length check,a
 Python,OOP,hard,What is abstraction?,Hiding implementation,Code reuse,Data hiding,Multiple inheritance,a
 Python,OOP,hard,Which module supports abstraction?,os,sys,abc,math,c
 Python,OOP,hard,What is polymorphism?,One name many forms,Data hiding,Inheritance,Encapsulation,a
 Python,OOP,hard,How to create a private variable?,_var,__var,var_,private,b
 Python,OOP,hard,What does __var indicate?,Protected,Private,Public,Global,b
 Python,OOP,hard,What is MRO?,Method Resolution Order,Memory Order,Module Runtime,Object Relation,a
+Python,OOP,hard,Which class cannot be instantiated?,Abstract,Base,Parent,Derived,a
+Python,OOP,hard,What is diamond problem?,Multiple inheritance issue,Memory leak,Recursion error,Type error,a
+Python,OOP,hard,Which decorator makes method abstract?,@abstract,@abstractmethod,@override,@virtual,b
+Python,OOP,hard,What does super() do?,Calls parent method,Creates object,Deletes class,Stops execution,a
 Python,FileHandling,medium,Which function is used to open a file?,read(),open(),load(),file(),b
 Python,FileHandling,medium,Which mode opens file for reading?,r,w,a,r+,a
 Python,FileHandling,medium,Which mode appends data to file?,w,r,a,x,c
+Python,FileHandling,medium,Which mode opens file for writing?,r,w,a,x,b
+Python,FileHandling,medium,Which method writes data?,write(),read(),append(),add(),a
+Python,FileHandling,medium,Which mode creates a file if it does not exist?,r,w,a,x,c
+Python,FileHandling,medium,Which method checks if file is closed?,isopen(),closed(),is_closed(),close(),b
+Python,FileHandling,medium,Which function returns current file position?,tell(),seek(),pos(),cursor(),a
+Python,FileHandling,medium,Which method reads one line from a file?,read(),readline(),readlines(),scan(),b
+Python,FileHandling,medium,Which mode allows both reading and writing?,r,w,r+,a,b
 Python,FileHandling,hard,Which method reads entire file?,read(),readline(),readlines(),load(),a
 Python,FileHandling,hard,What does with statement do?,Auto close file,Open file,Read file,Write file,a
+Python,FileHandling,hard,What happens if file not found?,Ignored,Error,Creates file,,b
+Python,FileHandling,hard,Which exception for file not found?,IOError,ValueError,FileNotFoundError,EOFError,c
+Python,FileHandling,hard,What does seek() do?,Move pointer,Close file,Read file,Delete file,a
+Python,FileHandling,hard,What does seek(0) do?,Move to end,Move to start,Close file,Delete content,b
+Python,FileHandling,hard,Which exception occurs on invalid file operation?,IOError,ValueError,TypeError,KeyError,a
+Python,FileHandling,hard,What happens when file is opened in x mode and already exists?,Overwritten,Appended,Error,,c
+Python,FileHandling,hard,Which method flushes internal buffer?,flush(),clear(),sync(),reset(),a
+Python,FileHandling,hard,What does tell() return?,File size,Pointer position,Line count,Mode,b
+Python,ExceptionHandling,medium,Which keyword is used to define custom exception?,class,def,raise,exception,a
+Python,ExceptionHandling,medium,Which block executes only if no exception occurs?,finally,except,else,try,c
+Python,ExceptionHandling,medium,Which exception occurs when dividing by zero?,ValueError,ZeroDivisionError,TypeError,ArithmeticError,b
+Python,ExceptionHandling,medium,Which exception handles missing dictionary key?,KeyError,IndexError,ValueError,NameError,a
+Python,ExceptionHandling,medium,Which block can be used multiple times?,try,except,finally,else,b
 Python,ExceptionHandling,medium,Which block handles exceptions?,try,catch,except,handle,c
 Python,ExceptionHandling,medium,Which block always executes?,try,except,else,finally,d
+Python,ExceptionHandling,medium,Which block runs if no error?,except,finally,else,try,c
+Python,ExceptionHandling,medium,Which exception handles wrong index?,ValueError,KeyError,IndexError,TypeError,c
+Python,ExceptionHandling,medium,Which keyword is used to catch errors?,try,catch,except,handle,c
 Python,ExceptionHandling,hard,What is a ValueError?,Wrong type,Wrong value,Index error,Key error,b
 Python,ExceptionHandling,hard,Which keyword raises an exception?,raise,throw,error,exception,a
 Python,ExceptionHandling,hard,What happens if exception is not handled?,Ignored,Program stops,Warning,Continues,b
+Python,ExceptionHandling,hard,What is custom exception?,User-defined error,Built-in error,System error,,a
+Python,ExceptionHandling,hard,Which block cleans resources?,try,except,else,finally,d
+Python,ExceptionHandling,hard,What is exception chaining?,Linking exceptions,Nesting loops,Multiple try blocks,Error suppression,a
+Python,ExceptionHandling,hard,Which keyword preserves original exception?,from,raise,with,as,a
+Python,ExceptionHandling,hard,What does raise without argument do?,Raises last exception,Stops program,Creates new exception,Ignored,a
+Python,ExceptionHandling,hard,Which exception is raised for invalid type operation?,TypeError,ValueError,IndexError,KeyError,a
+Python,ExceptionHandling,hard,What is purpose of finally block?,Handle error,Execute cleanup,Raise error,Skip code,b

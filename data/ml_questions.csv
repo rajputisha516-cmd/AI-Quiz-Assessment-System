@@ -36,3 +36,46 @@ ML,BiasVariance,medium,What causes high bias?,Complex model,Simple model,Large d
 ML,BiasVariance,hard,What causes high variance?,Simple model,Regularization,Complex model,Small features,c
 ML,AlgorithmIntuition,medium,Why does KNN perform poorly on large datasets?,Low accuracy,High memory usage,Needs feature scaling,Overfitting,b
 ML,AlgorithmIntuition,hard,Why do decision trees overfit?,Low bias,High variance,Small depth,Few splits,b
+ML,Basics,easy,Which field focuses on making machines learn from data?,Web development,Machine learning,Networking,Cloud computing,b
+ML,Basics,easy,Which learning type has no labeled output?,Supervised,Unsupervised,Reinforcement,Semi-supervised,b
+ML,Basics,easy,What is the output of a classification task?,Continuous value,Category label,Cluster group,Association rule,b
+ML,Basics,easy,Which ML task predicts future values?,Clustering,Classification,Regression,Dimensionality reduction,c
+ML,Basics,easy,Which term describes model performance on unseen data?,Accuracy,Generalization,Training error,Loss,b
+ML,DataTypes,easy,Which feature type has a fixed order?,Nominal,Ordinal,Numerical,Binary,b
+ML,DataTypes,easy,Which feature has no natural order?,Ordinal,Interval,Nominal,Ratio,c
+ML,DataTypes,medium,Which scaling method centers data to mean 0?,Normalization,Standardization,Encoding,Imputation,b
+ML,DataTypes,medium,Which technique handles skewed numerical data?,Scaling,Log transform,One-hot encoding,Label encoding,b
+ML,Preprocessing,easy,What is the goal of feature scaling?,Reduce noise,Equalize feature ranges,Remove outliers,Increase labels,b
+ML,Preprocessing,medium,Which method replaces missing values with median?,Mean imputation,Median imputation,Mode imputation,Drop rows,b
+ML,Preprocessing,medium,Which preprocessing step removes extreme values?,Encoding,Outlier removal,Scaling,Imputation,b
+ML,Preprocessing,hard,Why should preprocessing be done after train-test split?,To avoid leakage,To save time,To reduce memory,To increase accuracy,a
+ML,Supervised,easy,Which algorithm fits a straight line?,Linear Regression,Decision Tree,KNN,Naive Bayes,a
+ML,Supervised,medium,Which algorithm works well with categorical targets?,Regression,Clustering,Classification,PCA,c
+ML,Supervised,medium,Which algorithm builds rules using splits?,KNN,Naive Bayes,Decision Tree,Linear Regression,c
+ML,Supervised,hard,Which algorithm is sensitive to feature scaling?,Decision Tree,Naive Bayes,KNN,Random Forest,c
+ML,Unsupervised,easy,Which learning has no target variable?,Supervised,Unsupervised,Reinforcement,Semi-supervised,b
+ML,Unsupervised,medium,What does clustering primarily discover?,Labels,Patterns,Distances,Errors,b
+ML,Unsupervised,hard,Which clustering algorithm is hierarchical?,KMeans,DBSCAN,Agglomerative,Naive Bayes,c
+ML,Evaluation,easy,Which metric measures overall correctness?,Precision,Recall,Accuracy,F1-score,c
+ML,Evaluation,medium,Which metric focuses on false negatives?,Accuracy,Precision,Recall,RMSE,c
+ML,Evaluation,medium,Which metric is used for regression?,Accuracy,F1 score,RMSE,Recall,c
+ML,Evaluation,hard,Why accuracy can be misleading?,Balanced data,Imbalanced data,Small dataset,Large dataset,b
+ML,Overfitting,medium,What indicates an overfitted model?,Low training error,High test error,High bias,Low variance,b
+ML,Overfitting,medium,What helps detect overfitting?,Training loss,Validation loss,Accuracy score,Data size,b
+ML,Overfitting,hard,Which technique penalizes large coefficients?,Feature scaling,Regularization,Normalization,Encoding,b
+ML,FeatureEngineering,medium,What is feature selection?,Removing irrelevant features,Creating new features,Scaling data,Encoding labels,a
+ML,FeatureEngineering,medium,Which method reduces dimensionality?,Scaling,PCA,Encoding,Imputation,b
+ML,FeatureEngineering,hard,Why should feature engineering be domain-driven?,Reduce bias,Improve interpretability,Increase speed,Reduce data,b
+ML,TrainTest,easy,Why keep test data unseen?,Increase training accuracy,Ensure fair evaluation,Reduce noise,Increase speed,b
+ML,TrainTest,medium,Which split avoids order bias?,Random split,Sequential split,Manual split,,a
+ML,Validation,medium,What does k-fold cross-validation do?,Split once,Split multiple times,Increase features,Reduce labels,b
+ML,Validation,hard,What happens if k is too large?,High bias,High variance,High computation,Low accuracy,c
+ML,BiasVariance,medium,Which tradeoff balances underfitting and overfitting?,Bias-variance tradeoff,Loss tradeoff,Speed tradeoff,Data tradeoff,a
+ML,BiasVariance,hard,Which scenario shows high bias?,Complex model,Simple model,Large dataset,Noise,b
+ML,AlgorithmIntuition,medium,Why is feature scaling important for KNN?,Improve accuracy,Reduce memory,Reduce noise,Increase labels,a
+ML,AlgorithmIntuition,medium,Why is Naive Bayes fast?,No parameters,Independence assumption,Tree structure,Distance metric,b
+ML,AlgorithmIntuition,hard,Why do ensemble models perform better?,Single learner,Reduce variance,Increase bias,Reduce data,b
+ML,AlgorithmIntuition,hard,Why is logistic regression used for classification?,Linear output,Probability output,Clustering ability,Distance metric,b
+ML,AlgorithmIntuition,hard,Why does PCA help models?,Adds features,Reduces noise,Increases labels,Balances classes,b
+ML,Supervised,easy,Which algorithm fits a straight line?,Linear Regression  ,Decision Tree,KNN,Naive Bayes,a
+subject,topic,difficulty,question,option_a,option_b,option_c,option_d,a

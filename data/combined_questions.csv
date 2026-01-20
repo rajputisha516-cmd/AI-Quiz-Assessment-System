@@ -14,14 +14,6 @@ Python,Advanced,medium,What does map() return in Python 3?,List,Tuple,Iterator,S
 Python,Advanced,hard,Which data structure is best for FIFO queue?,List,Tuple,Deque,Set,c
 Python,Advanced,hard,Why are virtual environments important?,Version control,Dependency isolation,Speed,Memory,b
 Python,Advanced,medium,What happens if __eq__ is overridden?,Hash removed,Object comparison changes,Class breaks,Nothing,b
-Python,Advanced,medium,What is the primary purpose of decorators?,Modify function behavior,Improve speed,Handle errors,Create classes,a
-Python,Advanced,hard,Which keyword is used to build generators?,yield,return,iter,gen,a
-Python,Advanced,medium,What problem do context managers solve?,Speed,Resource management,Debugging,Inheritance,b
-Python,Advanced,hard,Which methods define a context manager?,__iter__ and __next__,__enter__ and __exit__,__init__ and __call__,__str__ and __repr__,b
-Python,Advanced,medium,Why is __slots__ used in classes?,Encapsulation,Reduce memory usage,Inheritance,Abstraction,b
-Python,Advanced,hard,Which situation can cause memory leaks in Python?,Garbage collection,Circular references,Unused imports,Low CPU,b
-Python,Advanced,medium,What does isinstance() check?,Value equality,Object type,Scope,Memory,b
-Python,Advanced,hard,What does Python GIL mainly affect?,I/O tasks,CPU-bound threads,Multiprocessing,Memory,b
 ML,Advanced,medium,What does bias–variance tradeoff explain?,Accuracy vs loss,Underfitting vs overfitting,Training vs testing,Speed vs memory,b
 ML,Advanced,hard,Which technique reduces model variance?,Increase depth,Regularization,Reduce data,Remove features,b
 ML,Advanced,medium,Why is cross-validation preferred?,Increase data size,Stable evaluation,Speed up training,Feature scaling,b
@@ -44,7 +36,7 @@ ML,Advanced,hard,What causes exploding gradients?,Small learning rate,Large grad
 ML,Advanced,medium,Why use pipelines?,Speed,Prevent data leakage,Reduce memory,Improve UI,b
 ML,Advanced,hard,Which technique handles imbalanced data?,PCA,SMOTE,Normalization,Imputation,b
 SQL,Advanced,medium,What is a view in SQL?,Temporary table,Virtual table,Index,Stored procedure,b
-SQL,Advanced,hard,Which command creates a view?,CREATE TABLE,CREATE VIEW,CREATE INDEX,CREATE PROCEDURE,b    
+SQL,Advanced,hard,Which command creates a view?,CREATE TABLE,CREATE VIEW,CREATE INDEX,CREATE PROCEDURE,a
 SQL,Advanced,medium,Why are indexes used?,Integrity,Speed up queries,Reduce storage,Normalization,b
 SQL,Advanced,hard,Which index type is best for range queries?,Hash,B-Tree,Bitmap,Heap,b
 SQL,Advanced,medium,What is a correlated subquery?,Independent query,Depends on outer query,Join query,Union query,b
@@ -68,4 +60,120 @@ SQL,Advanced,hard,Which SQL command removes a stored procedure?,DROP PROCEDURE,D
 SQL,Advanced,medium,What is a transaction?,Single query,Sequence of operations,Temporary table,Index,b
 SQL,Advanced,hard,Which command starts a transaction?,BEGIN,START,INITIATE,OPEN,a
 SQL,Advanced,medium,What does COMMIT do?,Save changes,Undo changes,Start transaction,End transaction,a
-
+subject,topic,difficulty,question,option_a,option_b,option_c,option_d,a
+Python,Advanced,medium,What is the main benefit of using generators?,Faster execution,Lower memory usage,Better syntax,Parallelism,b
+Python,Advanced,hard,Why are generators preferred for large datasets?,They are faster,They store all data,They yield lazily,They cache results,c
+Python,Advanced,medium,What does functools.lru_cache do?,Cache results,Clear memory,Speed IO,Handle threads,a
+Python,Advanced,hard,When should weak references be used?,Avoid GC,Prevent memory leaks,Increase speed,Share memory,b
+Python,Advanced,medium,What is the role of __call__?,Create object,Make instance callable,Delete object,Override init,b
+Python,Advanced,hard,Which issue arises with mutable default arguments?,Syntax error,Shared state bug,Slow execution,Memory leak,b
+Python,Advanced,medium,What does collections.Counter return?,Sorted list,Frequency mapping,Unique items,Indexes,b
+Python,Advanced,hard,Why is deepcopy slower than copy?,Extra memory,Recursive traversal,Locking,Serialization,b
+Python,Advanced,medium,What is the purpose of asyncio?,CPU parallelism,Concurrent IO,Memory sharing,Thread safety,b
+Python,Advanced,hard,Why is multiprocessing preferred over threading?,Lower overhead,GIL avoidance,Better syntax,Shared memory,b
+Python,Advanced,medium,What happens when __hash__ is overridden?,Object immutable,Hash changes,Key lookup breaks,Nothing,b
+Python,Advanced,hard,Why must __eq__ and __hash__ be consistent?,Performance,Dictionary correctness,Readability,Speed,b
+Python,Advanced,medium,What does the global keyword do?,Create variable,Modify global scope,Import module,Freeze value,b
+Python,Advanced,hard,Why is pickle unsafe with untrusted data?,Slow load,Code execution risk,Memory leak,Data loss,b
+Python,Advanced,medium,What is the purpose of dataclasses?,Reduce boilerplate,Improve speed,Memory safety,Threading,a
+Python,Advanced,hard,Which scenario breaks thread safety?,Immutable data,Shared mutable state,Read-only access,Local variables,b
+Python,Advanced,medium,What does enumerate return?,Index-value pairs,Sorted list,Iterator only,Tuple list,a
+Python,Advanced,hard,Why is recursion depth limited?,Memory safety,Speed,CPU limits,Stack overflow,a
+Python,Advanced,medium,What is the benefit of __slots__?,Faster methods,Less memory,Better inheritance,Encapsulation,b
+Python,Advanced,hard,Why can circular imports fail?,Runtime error,Partial initialization,Deadlock,GC issue,b
+ML,Advanced,medium,Why does regularization improve generalization?,Adds data,Reduces variance,Increases bias,Speeds training,b
+ML,Advanced,hard,Which regularization shrinks weights to zero?,L1,L2,ElasticNet,Dropout,a
+ML,Advanced,medium,Why is ROC-AUC threshold independent?,Balanced data,Probability-based,Class-weighted,Loss-based,b
+ML,Advanced,hard,Why is accuracy misleading for rare events?,Noise,Class imbalance,Overfitting,Underfitting,b
+ML,Advanced,medium,What does bagging reduce?,Bias,Variance,Noise,Loss,b
+ML,Advanced,hard,Why does boosting risk overfitting?,Sequential learning,Noise sensitivity,Small data,High bias,b
+ML,Advanced,medium,What does early stopping prevent?,Underfitting,Overfitting,Data leakage,Scaling,b
+ML,Advanced,hard,Why is cross-validation expensive?,Large data,Repeated training,Feature scaling,Label encoding,b
+ML,Advanced,medium,What does SMOTE address?,Noise,Bias,Imbalanced classes,Overfitting,c
+ML,Advanced,hard,Why can SMOTE cause leakage?,Label duplication,Synthetic overlap,Test contamination,Noise amplification,c
+ML,Advanced,medium,What is the purpose of learning rate?,Control updates,Increase epochs,Reduce loss,Scale features,a
+ML,Advanced,hard,Why do deep networks vanish gradients?,Small derivatives,Large weights,Noise,Regularization,a
+ML,Advanced,medium,What does dropout simulate?,Ensemble effect,Feature scaling,Noise reduction,Data augmentation,a
+ML,Advanced,hard,Why is feature scaling critical for SGD?,Distance metric,Gradient stability,Memory,Speed,b
+ML,Advanced,medium,What does calibration improve?,Accuracy,Probability reliability,Recall,Precision,b
+ML,Advanced,hard,Why does high dimensionality hurt KNN?,Noise,Bias,Distance concentration,Overfitting,c
+ML,Advanced,medium,What is the role of validation set?,Training,Hyperparameter tuning,Final testing,Deployment,b
+ML,Advanced,hard,Why do ensembles outperform single models?,Bias increase,Variance reduction,Data duplication,Speed,b
+ML,Advanced,medium,What is concept drift?,Label noise,Distribution change,Overfitting,Scaling issue,b
+ML,Advanced,hard,Why is time-series split required?,Randomness,Temporal leakage,Class balance,Speed,b
+SQL,Advanced,medium,Why are window functions useful?,Aggregation,Row-level analytics,Indexing,Joins,b
+SQL,Advanced,hard,Why do window functions not reduce rows?,Performance,Logical processing,Partitioning,Sorting,b
+SQL,Advanced,medium,What does PARTITION BY control?,Row order,Window scope,Grouping tables,Indexing,b
+SQL,Advanced,hard,Why is FULL JOIN expensive?,Indexes,Large output,Null handling,Sorting,b
+SQL,Advanced,medium,What is benefit of indexed foreign keys?,Integrity,Faster joins,Normalization,Security,b
+SQL,Advanced,hard,Why can indexes slow writes?,Locking,Extra maintenance,Sorting,Scanning,b
+SQL,Advanced,medium,What does EXISTS optimize?,Row scanning,Early termination,Index usage,Aggregation,b
+SQL,Advanced,hard,Why are correlated subqueries slow?,Repeated execution,Sorting,Index miss,Join cost,a
+SQL,Advanced,medium,What does query planner decide?,Execution plan,Schema,Constraints,Indexes,a
+SQL,Advanced,hard,Why does ORDER BY increase cost?,Sorting,Scanning,Joins,Filtering,a
+SQL,Advanced,medium,What is benefit of covering index?,Speed,Storage,Integrity,Security,a
+SQL,Advanced,hard,Why is DISTINCT costly?,Memory usage,Sorting overhead,Index miss,Joins,b
+SQL,Advanced,medium,What does SERIALIZABLE ensure?,Speed,Isolation,Consistency,Durability,b
+SQL,Advanced,hard,Why do deadlocks occur?,Locks,Indexes,Joins,Constraints,a
+SQL,Advanced,medium,What is purpose of SAVEPOINT?,Rollback control,Speed,Isolation,Durability,a
+SQL,Advanced,hard,Why is denormalization used?,Performance,Integrity,Consistency,Security,a
+SQL,Advanced,medium,What does execution order affect?,Results,Performance,Both,Neither,c
+SQL,Advanced,hard,Why is SELECT executed last logically?,Projection,Filtering,Grouping,Joins,a
+Python,Advanced,medium,What is the main use of functools.partial?,Fix function arguments,Speed execution,Reduce memory,Handle errors,a
+Python,Advanced,hard,Why are weak references useful in caches?,Prevent GC,Avoid memory leaks,Increase speed,Share objects,b
+Python,Advanced,medium,What does contextlib.suppress do?,Raise exception,Ignore specified exceptions,Log errors,Retry code,b
+Python,Advanced,hard,Why can deepcopy fail on complex objects?,Speed,Recursion issues,Missing references,Syntax error,b
+Python,Advanced,medium,What is the benefit of namedtuple?,Mutable fields,Readable tuples,Faster dicts,Thread safety,b
+Python,Advanced,hard,Why is GIL released during I/O?,Increase CPU usage,Improve concurrency,Reduce memory,Avoid deadlock,b
+Python,Advanced,medium,What does itertools.groupby require?,Sorted data,Unique keys,Hashable values,Indexing,a
+Python,Advanced,hard,Why are async generators useful?,CPU tasks,Streaming data,Memory sharing,Thread safety,b
+Python,Advanced,medium,What is the role of __getattr__?,Attribute access fallback,Override init,Delete attribute,Hashing,a
+Python,Advanced,hard,Why can metaclasses be dangerous?,Syntax complexity,Unpredictable behavior,Memory leak,Slow execution,b
+Python,Advanced,medium,What does vars() return?,Global scope,Object __dict__,Class methods,Module list,b
+Python,Advanced,hard,Why should locks be minimized?,Memory cost,Deadlock risk,CPU usage,Garbage collection,b
+Python,Advanced,medium,What is benefit of frozenset?,Mutable set,Hashable set,Faster lookup,Ordered data,b
+Python,Advanced,hard,Why is recursion inefficient in Python?,No tail-call optimization,Slow syntax,Memory leak,GIL,a
+Python,Advanced,medium,What does __slots__ prevent?,Inheritance,Dynamic attributes,Method override,Polymorphism,b
+Python,Advanced,hard,Why can circular references delay cleanup?,GC disabled,Reference counting,Threading,Stack overflow,b
+Python,Advanced,medium,What is use of inspect module?,Debug stack,Runtime introspection,Memory profiling,Testing,b
+Python,Advanced,hard,Why is pickle version dependent?,Syntax change,Object structure,OS dependency,Encoding,b
+Python,Advanced,medium,What does help() rely on?,Docstrings,Type hints,Annotations,Comments,a
+Python,Advanced,hard,Why is eval dangerous?,Slow execution,Code injection,Memory leak,Threading,b
+ML,Advanced,medium,Why does L2 regularization smooth models?,Feature removal,Weight shrinking,Noise addition,Bias increase,b
+ML,Advanced,hard,Why can high learning rate diverge training?,Overshooting minima,Underfitting,Vanishing gradients,Noise,a
+ML,Advanced,medium,What does ROC curve plot?,Recall vs Precision,TPR vs FPR,Accuracy vs Loss,Bias vs Variance,b
+ML,Advanced,hard,Why is log-loss preferred in probabilistic models?,Differentiable,Scale invariant,Less noise,Class balance,a
+ML,Advanced,medium,What does ensemble diversity mean?,Different models,Same features,Same errors,Same data,a
+ML,Advanced,hard,Why does bagging reduce variance?,Bootstrap sampling,Sequential learning,Feature scaling,Noise injection,a
+ML,Advanced,medium,What does hyperparameter control?,Model structure,Training process,Data size,Evaluation,b
+ML,Advanced,hard,Why does early stopping act as regularization?,Noise removal,Limits training,Data augmentation,Bias reduction,b
+ML,Advanced,medium,What does feature importance indicate?,Correlation,Contribution to prediction,Scaling need,Noise,b
+ML,Advanced,hard,Why is permutation importance costly?,Repeated evaluation,Large models,Noise sensitivity,Memory,a
+ML,Advanced,medium,What is purpose of learning curves?,Track loss,Diagnose bias-variance,Optimize memory,Scale features,b
+ML,Advanced,hard,Why do deep models overfit small data?,High capacity,Noise,Scaling issues,Optimization,b
+ML,Advanced,medium,What does class weighting address?,Noise,Bias,Imbalance,Overfitting,c
+ML,Advanced,hard,Why does shuffling break time-series models?,Noise,Temporal dependency,Scaling,Bias,b
+ML,Advanced,medium,What is effect of batch size?,Memory usage,Gradient stability,Model bias,Both a and b,d
+ML,Advanced,hard,Why does normalization help optimization?,Faster convergence,Less memory,Lower bias,Noise reduction,a
+ML,Advanced,medium,What does model drift impact?,Accuracy stability,Training speed,Memory usage,Feature count,a
+ML,Advanced,hard,Why is validation leakage harmful?,Optimistic metrics,Slower training,Noise increase,Memory,b
+ML,Advanced,medium,What is stacking meta-learner role?,Base model,Final predictor,Feature selector,Sampler,b
+ML,Advanced,hard,Why is SGD noisy?,Random sampling,Small batches,Large gradients,Both a and b,d
+SQL,Advanced,medium,Why do window functions need ORDER BY?,Row context,Performance,Index usage,Filtering,a
+SQL,Advanced,hard,Why are analytic queries expensive?,Sorting and scanning,Index usage,Joins,Constraints,a
+SQL,Advanced,medium,What does EXPLAIN analyze?,Execution plan,Schema,Indexes,Data,a
+SQL,Advanced,hard,Why can query planner choose wrong index?,Outdated stats,Syntax error,Missing join,Locking,a
+SQL,Advanced,medium,What is benefit of materialized view?,Precomputed results,Dynamic data,Indexing,Normalization,a
+SQL,Advanced,hard,Why do materialized views need refresh?,Index change,Data change,Schema change,Locking,b
+SQL,Advanced,medium,What does UNION ALL avoid?,Duplicates removal,Sorting,Join,Filtering,b
+SQL,Advanced,hard,Why is UNION slower than UNION ALL?,Duplicate elimination,Index usage,Joins,Locks,a
+SQL,Advanced,medium,What does CHECK constraint enforce?,Referential integrity,Column condition,Uniqueness,Index,b
+SQL,Advanced,hard,Why can cascading deletes be risky?,Data loss,Performance gain,Index miss,Deadlock,a
+SQL,Advanced,medium,What does ROW_NUMBER reset on?,ORDER BY,PARTITION BY,JOIN,WHERE,b
+SQL,Advanced,hard,Why do large OFFSET queries slow down?,Row scanning,Index usage,Locks,Sorting,a
+SQL,Advanced,medium,What is benefit of prepared statements?,Security,Reusability,Performance,All of these,d
+SQL,Advanced,hard,Why are triggers hard to debug?,Implicit execution,Syntax errors,Indexing,Joins,a
+SQL,Advanced,medium,What does isolation level control?,Locking behavior,Index usage,Query speed,Schema,a
+SQL,Advanced,hard,Why can SERIALIZABLE reduce concurrency?,Strict locking,Index scans,Joins,Sorting,a
+SQL,Advanced,medium,What does execution plan cost represent?,Estimated work,Actual time,Memory usage,Rows,a
+SQL,Advanced,hard,Why is full table scan expensive?,Disk IO,Sorting,Indexing,Constraints,a

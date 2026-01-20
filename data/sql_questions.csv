@@ -35,3 +35,69 @@ SQL,Constraints,medium,Which constraint prevents NULL values?,UNIQUE,NOT NULL,PR
 SQL,Constraints,hard,Which constraint enforces referential integrity?,UNIQUE,PRIMARY KEY,FOREIGN KEY,CHECK,c
 SQL,ExecutionOrder,hard,Which clause executes first in SQL?,SELECT,WHERE,GROUP BY,FROM,d
 SQL,ExecutionOrder,hard,Which clause executes after GROUP BY?,WHERE,HAVING,SELECT,FROM,b
+SQL,Basics,easy,Which SQL command modifies existing data?,INSERT,UPDATE,SELECT,ALTER,b
+SQL,Basics,easy,Which statement deletes a table permanently?,DELETE,TRUNCATE,DROP,REMOVE,c
+SQL,Basics,easy,Which keyword removes duplicate rows?,UNIQUE,DISTINCT,GROUP BY,HAVING,b
+SQL,Basics,easy,Which clause specifies table name?,FROM,WHERE,SELECT,ORDER BY,a
+SQL,Basics,easy,Which symbol is used for aliases?,AS,ALIAS,LIKE,WITH,a
+SQL,Filtering,easy,Which operator checks multiple conditions?,AND,OR,BETWEEN,IN,a
+SQL,Filtering,medium,Which operator negates a condition?,NOT,NO,!,EXCEPT,a
+SQL,Filtering,medium,Which clause filters results after aggregation?,WHERE,HAVING,ORDER BY,GROUP BY,b
+SQL,Filtering,hard,Which operator returns true if subquery returns rows?,EXISTS,IN,ANY,ALL,a
+SQL,Sorting,medium,Which keyword sorts results in descending order?,DESC,DOWN,ORDER,REVERSE,a
+SQL,Sorting,medium,Which clause is applied after WHERE?,ORDER BY,GROUP BY,HAVING,SELECT,a
+SQL,Aggregation,medium,Which function returns smallest value?,MIN,LOWEST,LEAST,SMALL,a
+SQL,Aggregation,medium,Which function returns total sum?,SUM,ADD,TOTAL,COUNT,a
+SQL,Aggregation,hard,Which aggregate function counts non-NULL values?,COUNT(*),COUNT(column),SUM,AVG,b
+SQL,GroupBy,medium,Which clause is used with GROUP BY to filter groups?,WHERE,HAVING,ORDER BY,FROM,b
+SQL,GroupBy,hard,Which GROUP BY error occurs without aggregation?,Syntax error,Logical error,Runtime error,No error,d
+SQL,Having,medium,Which clause works only with GROUP BY?,WHERE,HAVING,ORDER BY,LIMIT,b
+SQL,Having,hard,Which clause is evaluated after GROUP BY?,WHERE,HAVING,FROM,JOIN,b
+SQL,Joins,medium,Which join returns unmatched rows as NULL?,INNER JOIN,LEFT JOIN,CROSS JOIN,SELF JOIN,b
+SQL,Joins,medium,Which join combines table with itself?,SELF JOIN,CROSS JOIN,INNER JOIN,FULL JOIN,a
+SQL,Joins,hard,Which join produces Cartesian product?,INNER JOIN,LEFT JOIN,CROSS JOIN,FULL JOIN,c
+SQL,Joins,hard,Which join is default when JOIN keyword is used?,LEFT JOIN,RIGHT JOIN,INNER JOIN,FULL JOIN,c
+SQL,Subqueries,medium,Which subquery is executed once?,Correlated,Scalar,Simple,Nested,c
+SQL,Subqueries,medium,Which subquery can return multiple rows?,Scalar,Correlated,Simple,Single,b
+SQL,Subqueries,hard,Which clause commonly uses correlated subqueries?,SELECT,WHERE,FROM,ORDER BY,b
+SQL,NullHandling,medium,Which function replaces NULL values?,REPLACE,COALESCE,ISNULL,IFNULL,b
+SQL,NullHandling,hard,Which function returns first non-NULL value?,COALESCE,ISNULL,NULLIF,CAST,a
+SQL,Constraints,medium,Which constraint checks condition on column?,CHECK,UNIQUE,DEFAULT,INDEX,a
+SQL,Constraints,hard,Which constraint allows duplicate values?,UNIQUE,PRIMARY KEY,FOREIGN KEY,NONE,d
+SQL,ExecutionOrder,medium,Which clause is processed after FROM?,WHERE,SELECT,GROUP BY,ORDER BY,a
+SQL,ExecutionOrder,medium,Which clause is processed last?,WHERE,GROUP BY,ORDER BY,FROM,c
+SQL,Indexes,medium,What is purpose of index?,Increase speed,Store data,Reduce size,Enforce constraint,a
+SQL,Indexes,hard,What is drawback of indexes?,Slower reads,Extra storage,Slower inserts,All of these,d
+SQL,Views,medium,What is a view?,Virtual table,Physical table,Index,Stored procedure,a
+SQL,Views,hard,Which statement creates a view?,CREATE VIEW,MAKE VIEW,ALTER VIEW,ADD VIEW,a
+SQL,Transactions,medium,Which command saves transaction permanently?,SAVEPOINT,COMMIT,ROLLBACK,END,b
+SQL,Transactions,medium,Which command reverts transaction?,COMMIT,ROLLBACK,SAVEPOINT,END,b
+SQL,Transactions,hard,Which property ensures atomicity?,ACID,JOIN,INDEX,NORMALIZATION,a
+SQL,Normalization,medium,What is goal of normalization?,Reduce redundancy,Increase data,Speed queries,Add indexes,a
+SQL,Normalization,hard,Which normal form removes transitive dependency?,1NF,2NF,3NF,BCNF,c
+SQL,Functions,medium,Which function converts text to uppercase?,UPPER,LOWER,INITCAP,CONCAT,a
+SQL,Functions,hard,Which function returns current date?,NOW(),CURDATE(),SYSDATE(),All of these,d
+SQL,StoredProcedures,medium,What is a stored procedure?,Precompiled SQL code,Ad-hoc query,Temporary table,Index,a
+SQL,StoredProcedures,hard,Which command removes a stored procedure?,DROP PROCEDURE,DELETE PROCEDURE,REMOVE PROCEDURE,ALTER PROCEDURE,a
+SQL,Basics,easy,Which SQL command changes table structure?,ALTER,UPDATE,MODIFY,CHANGE,a
+SQL,Basics,easy,Which keyword is used to rename a table?,RENAME,ALTER,CHANGE,UPDATE,a
+SQL,Filtering,medium,Which operator checks for multiple possible values?,ANY,IN,ALL,BETWEEN,b
+SQL,Filtering,hard,Which operator returns true if any subquery value matches?,ANY,ALL,IN,EXISTS,a
+SQL,Sorting,medium,Which clause is applied after GROUP BY?,ORDER BY,WHERE,HAVING,LIMIT,a
+SQL,Aggregation,medium,Which function calculates average excluding NULLs?,AVG,MEAN,COUNT,SUM,a
+SQL,Aggregation,hard,Which aggregate function works on expressions?,SUM,COUNT,AVG,All of these,d
+SQL,GroupBy,medium,Which error occurs if non-aggregated column is not in GROUP BY?,Runtime error,Logical error,Syntax error,,a
+SQL,Having,hard,Which clause filters results after aggregation?,WHERE,HAVING,ORDER BY,GROUP BY,b
+SQL,Joins,medium,Which join is used to find unmatched rows?,LEFT JOIN,INNER JOIN,CROSS JOIN,SELF JOIN,a
+SQL,Joins,hard,Which join can produce duplicate rows?,INNER JOIN,LEFT JOIN,RIGHT JOIN,All joins,d
+SQL,Subqueries,medium,Which subquery executes for each row of outer query?,Scalar,Simple,Correlated,Inline,c
+SQL,Subqueries,hard,Which subquery can return multiple columns?,Scalar,Correlated,Row,Single,c
+SQL,NullHandling,medium,Which function converts NULL to a value?,COALESCE,ISNULL,NULLIF,CAST,a
+SQL,NullHandling,hard,Which comparison with NULL always returns false?,= NULL,IS NULL,IS NOT NULL,LIKE,a
+SQL,Constraints,medium,Which constraint assigns default value?,DEFAULT,UNIQUE,PRIMARY KEY,CHECK,a
+SQL,Constraints,hard,Which constraint ensures data validity?,CHECK,FOREIGN KEY,UNIQUE,INDEX,a
+SQL,ExecutionOrder,medium,Which clause is evaluated before SELECT?,FROM,WHERE,GROUP BY,HAVING,a
+SQL,ExecutionOrder,hard,Which clause is evaluated last logically?,FROM,WHERE,GROUP BY,SELECT,d
+SQL,Indexes,hard,Which index improves equality search?,B-Tree,Hash,Bitmap,Clustered,b
+SQL,Views,hard,Which command removes a view?,DROP VIEW,DELETE VIEW,REMOVE VIEW,ALTER VIEW,a
+SQL,Transactions,hard,Which property ensures durability?,ACID,JOIN,INDEX,NORMALIZATION,a

@@ -1,6 +1,7 @@
 import streamlit as st
 import time
 
+
 from core.quiz_engine import QuizEngine
 from utils.helpers import log_attempt
 from utils.difficulty_logic import get_next_difficulty
@@ -26,7 +27,7 @@ COMBINED_QUIZ_QUESTIONS = 50
 
 
 # ================= SESSION STATE =================
-defaults = {
+SESSION_DEFAULTS = {
     "quiz_started": False,
     "quiz_completed": False,
     "current_question": None,
@@ -40,7 +41,7 @@ defaults = {
     "correct_count": 0
 }
 
-for k, v in defaults.items():
+for k, v in SESSION_DEFAULTS.items():
     if k not in st.session_state:
         st.session_state[k] = v
 
@@ -68,7 +69,7 @@ with left:
         required_questions = COMBINED_QUIZ_QUESTIONS
 
     if st.button("🔄 Reset Quiz"):
-        for k, v in defaults.items():
+        for k, v in SESSION_DEFAULTS.items():
             st.session_state[k] = v
         st.rerun()
 
@@ -90,6 +91,8 @@ with center:
             st.session_state.difficulty = "easy"
             st.session_state.asked_questions = set()
             st.session_state.correct_count = 0
+            st.session_state.show_result = False
+            st.session_state.last_result = None
 
             qs = engine.get_questions(
                 subject=subject,
@@ -119,6 +122,10 @@ with center:
             q["option_d"]
         ]
         options = [o for o in options if isinstance(o, str) and o.strip()]
+
+        # ensure minimum 4 options for UI consistency
+        while len(options) < 4:
+            options.append("None of these")
 
         selected = st.radio(
             "Choose an answer:",
@@ -165,10 +172,10 @@ with center:
 
             if st.session_state.quiz_type == "Single Skill":
                 st.session_state.difficulty = get_next_difficulty(
-                    st.session_state.difficulty,
-                    correct,
-                    time_taken
+                    current_difficulty=st.session_state.difficulty,
+                    subject=subject
                 )
+
 
             st.session_state.show_result = True
             st.rerun()
@@ -185,12 +192,13 @@ with center:
         # ---------- NEXT ----------
         if next_btn and st.session_state.show_result:
 
-            # 🔒 HARD STOP CONDITION
+            # 🔒 ONLY VALID QUIZ END CONDITION
             if len(st.session_state.asked_questions) >= st.session_state.required_questions:
                 st.session_state.quiz_completed = True
                 st.session_state.quiz_started = False
                 st.rerun()
 
+            # try with current difficulty
             qs = engine.get_questions(
                 subject=subject,
                 difficulty=st.session_state.difficulty,
@@ -198,11 +206,20 @@ with center:
                 n=1
             )
 
+            # fallback: ignore difficulty (NEVER END QUIZ HERE)
             if not qs:
-                # fallback safety
-                st.session_state.quiz_completed = True
+                qs = engine.get_questions(
+                    subject=subject,
+                    difficulty=None,
+                    asked_questions=st.session_state.asked_questions,
+                    n=1
+                )
+
+            # absolute safety (data exhausted)
+            if not qs:
+                st.warning("Question pool exhausted. Please reset quiz.")
                 st.session_state.quiz_started = False
-                st.rerun()
+                st.stop()
 
             st.session_state.current_question = qs[0]
             st.session_state.start_time = time.time()
