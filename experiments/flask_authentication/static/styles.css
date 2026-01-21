@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #111827, #020617);
+  font-family: 'Segoe UI', sans-serif;
+  color: #e5e7eb;
+}
+
+/* Center wrapper */
+.auth-wrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Card */
+.auth-card {
+  width: 380px;
+  background: #020617;
+  padding: 36px;
+  border-radius: 16px;
+  box-shadow: 0 0 0 1px #1f2937, 0 25px 60px rgba(0,0,0,0.7);
+}
+
+/* Text */
+.auth-card h2 {
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: #9ca3af;
+  margin-bottom: 28px;
+}
+
+/* Inputs */
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 14px;
+  background: #020617;
+  border: 1px solid #1f2937;
+  border-radius: 8px;
+  color: #e5e7eb;
+}
+
+input:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* Switch link */
+.switch {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.switch a {
+  color: #60a5fa;
+  text-decoration: none;
+}

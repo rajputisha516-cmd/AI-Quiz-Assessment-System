@@ -1,7 +1,6 @@
 import streamlit as st
 import time
 
-
 from core.quiz_engine import QuizEngine
 from utils.helpers import log_attempt
 from utils.difficulty_logic import get_next_difficulty

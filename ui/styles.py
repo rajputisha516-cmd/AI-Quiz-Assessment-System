@@ -57,3 +57,70 @@ def load_styles():
         """,
         unsafe_allow_html=True
     )
+
+def load_login_styles():
+    st.markdown("""
+    <style>
+    /* ===== ONLY LOGIN PAGE STYLES ===== */
+
+    .login-bg {
+        background-color: #213448;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .login-card {
+        width: 420px;
+        background-color: #2C3E5C;
+        padding: 32px;
+        border-radius: 16px;
+        border: 1px solid #3E4F73;
+        box-shadow: 0 14px 35px rgba(0,0,0,0.45);
+    }
+
+    .login-title {
+        text-align: center;
+        font-size: 26px;
+        font-weight: 600;
+        color: #E5E7EB;
+        margin-bottom: 28px;
+    }
+
+    label {
+        color: #CBD5E1 !important;
+        font-size: 14px;
+    }
+
+    .stTextInput input {
+        background-color: #213448;
+        color: #F9FAFB;
+        border-radius: 8px;
+        border: 1px solid #4B5F8A;
+        height: 44px;
+    }
+
+    .login-btn button {
+        width: 100%;
+        height: 44px;
+        background-color: #7C3AED !important;
+        color: white !important;
+        font-weight: 600;
+        border-radius: 8px;
+        border: none;
+        margin-top: 18px;
+    }
+
+    .signup-btn button {
+        width: 100%;
+        height: 44px;
+        background-color: #1E3A8A !important;
+        color: white !important;
+        font-weight: 600;
+        border-radius: 8px;
+        border: none;
+        margin-top: 10px;
+    }
+    </style>
+    """, unsafe_allow_html=True)
