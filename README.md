@@ -1,87 +1,122 @@
 # AI Quiz Assessment System
 
-This repository contains my **AI Quiz Assessment System** project built using **Python and Streamlit**.
+This project is an AI-based quiz assessment system built using Flask and Streamlit.
 
-The project is currently in a **Work in Progress (WIP)** stage.  
-Right now, my main focus is on understanding quiz flow, question handling, and assessment logic rather than deployment or authentication.
+Flask is used for handling authentication (login, signup, logout) and Streamlit is
+used for rendering the quiz interface. The quiz adapts its difficulty dynamically
+and predicts the user's skill level using machine learning.
 
----
-
-## About the Project
-
-The aim of this project is to build a quiz-based assessment system that can later be extended into an adaptive or intelligent quiz platform.
-
-At this stage, the project helps me practice:
-- Designing quiz flow
-- Rendering questions and options
-- Managing user interaction in Streamlit
-- Thinking about feature engineering for assessment systems
+The project focuses on integrating multiple Python frameworks in a clean and
+maintainable way.
 
 ---
 
-## Current Features
+## Features
 
-- Quiz interface using Streamlit  
-- Question display with multiple options  
-- Basic quiz flow handling  
-- Desktop and mobile browser friendly UI  
+- User login and signup using Flask
+- Token-based access to Streamlit application
+- Adaptive quiz based on difficulty progression
+- Skill level prediction using ML
+- Logout handled via Flask
+- Modular project structure
 
 ---
 
 ## Tech Stack
 
-- Python  
-- Streamlit  
-- SQLite (experimental / not finalized)  
-- Git & GitHub  
+- Python
+- Flask
+- Streamlit
+- SQLite
+- Machine Learning
+- Git / GitHub
 
 ---
 
 ## Project Structure
 
-AI_Quiz_Assessment_System/
-- app.py  
-- auth/
-  - login.py (experimental, WIP)
-- data/
-  - users.db (local / not deployed)
-- ui/
-  - styles.py
-  - components.py
+AI_QUIZ_ASSESSMENT_SYSTEM/
+├── app.py
+├── core/
+├── ml/
+├── utils/
+├── ui/
+├── data/
+├── experiments/
+│ └── flask_authentication/
+│ ├── auth.py
+│ ├── users.db
+│ ├── templates/
+│ │ ├── login.html
+│ │ └── signup.html
+│ └── static/
+│ └── styles.css
+├── requirements.txt
+└── README.md
 
 ---
 
-## Project Status
+## Application Flow
 
-- Authentication logic: Not finalized  
-- Feature engineering: In progress  
-- Deployment: Not done yet  
-
-This is intentional, as I want to strengthen the core logic before moving ahead.
-
----
-
-## Learning Goals
-
-Through this project, I am learning:
-- How assessment systems are structured
-- How to work with Streamlit for interactive applications
-- How to iterate on a project instead of rushing to finish it
-- Real-world project workflow using Git and GitHub
+- User opens the Flask login page
+- After successful login, a token is generated
+- Streamlit quiz opens with token validation
+- User attempts the quiz
+- Skill level is calculated after quiz completion
+- Logout redirects back to login page
 
 ---
 
-## Future Scope
+## How to Run
 
-- Improve quiz logic and feature engineering
-- Add adaptive difficulty
-- Finalize authentication flow
-- Deploy the application
-- Add analytics and scoring insights
+Install dependencies: pip install -r requirements.txt
+
+Run the application using the following command:
+
+python experiments/flask_authentication/auth.py
+
+Then open the application in your browser at:
+
+http://127.0.0.1:5000
+
+## Notes
+
+- The Streamlit app can also be run independently using `streamlit run app.py`.
+- Authentication flow is controlled by Flask.
+- Token handling is intentionally kept simple for now.
+- This project is primarily intended for local development and experimentation.
+
+---
+
+## Known Issues
+
+- The Streamlit application can be accessed directly when run independently.
+- Token validation is basic and does not include expiry handling.
+- Logout currently depends on Flask terminating the Streamlit process.
+
+---
+
+## Limitations
+
+- Session persistence is not implemented.
+- Security mechanisms are intentionally minimal at this stage.
+- The application is designed for local usage and experimentation.
+
+---
+
+## Future Work
+
+- Add token expiry and session management.
+- Restrict direct access to the Streamlit application.
+- Improve authentication and authorization flow.
+- Prepare the application for deployment.
 
 ---
 
 ## Author
 
 Isha Rajput  
-Learning by building and improving step by step.
+Python and AI Developer  
+
+This project was developed as part of hands-on learning and experimentation
+with Flask, Streamlit, and machine learning–based assessment systems.
