@@ -16,6 +16,7 @@ st.set_page_config(
     layout="wide"
 )
 
+
 load_styles()
 engine = QuizEngine()
 
@@ -71,6 +72,16 @@ with left:
         for k, v in SESSION_DEFAULTS.items():
             st.session_state[k] = v
         st.rerun()
+
+    st.markdown("---")
+
+    if st.button(" 🚪  Logout "):
+        st.markdown(
+            "<meta http-equiv='refresh' content='0; url=http://127.0.0.1:5000/logout'>",
+            unsafe_allow_html=True
+        )
+        st.stop()
+        
 
     st.markdown("</div>", unsafe_allow_html=True)
 

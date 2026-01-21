@@ -48,6 +48,8 @@ def load_styles():
             border: none;
             font-weight: 500;
             height: 42px;
+            width: 100%;
+            
         }
 
         .stButton > button:hover {
@@ -104,23 +106,27 @@ def load_login_styles():
     .login-btn button {
         width: 100%;
         height: 44px;
-        background-color: #7C3AED !important;
+        background-color: #8B5CF6 !important;
         color: white !important;
         font-weight: 600;
         border-radius: 8px;
         border: none;
         margin-top: 18px;
+        buthton:hover {
+            background-color: #7C3AED !important;
     }
 
     .signup-btn button {
         width: 100%;
         height: 44px;
-        background-color: #1E3A8A !important;
+        background-color: #8B5CF6 !important;
         color: white !important;
         font-weight: 600;
         border-radius: 8px;
         border: none;
         margin-top: 10px;
+        buthton:hover {
+            background-color: #7C3AED !important;
     }
     </style>
     """, unsafe_allow_html=True)
